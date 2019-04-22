@@ -48,6 +48,12 @@ module Chickpea
         end.to_h
       end
 
+      klass.define_method(:merge!) do |hash|
+        hash.each do |k, v|
+          v.is_a?(Hash) ? send(k).merge!(v) : send(:"#{k}=", v)
+        end
+      end
+
       klass.new
     end
 

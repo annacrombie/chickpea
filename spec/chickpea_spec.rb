@@ -35,4 +35,9 @@ RSpec.describe Chickpea do
     expect(stash.a.b.c.to_h).to eq(d: 1)
     expect(stash.a.b.to_h).to eq(c: { d: 1 })
   end
+
+  it 'can merge with a hash' do
+    stash.a.merge!(b: { c: { d: 5 } })
+    expect(stash.a.b.c.d).to eq(5)
+  end
 end

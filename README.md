@@ -1,8 +1,16 @@
 # CStash
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cstash`. To experiment with that code, run `bin/console` for an interactive prompt.
+A simple ruby stash.  It is basically a nested struct with a few extra
+features.
 
-TODO: Delete this and the text above, and describe your gem
+## Features
+
++ Immutable structure - the structure you define can't be mutated.  Only the
+  value of nodes can.
++ Type checking - when you set a node, its type (class) is checked against the
+  old node and an exception is raised if there is a mismatch
++ Fast - there is no underlying hash or struct, so if you don't need to mutate
+  data often cstash is pretty fast
 
 ## Installation
 
@@ -21,8 +29,24 @@ Or install it yourself as:
     $ gem install cstash
 
 ## Usage
+```ruby
+stash = CStash::Stash.new(
+  a: {
+    b: {
+      c: {
+        d: 1
+      }
+    },
+    bb: false
+  }
+)
 
-TODO: Write usage instructions here
+stash.a.b.c.d #=> 1
+stash.a.bb? #=> false
+stash.a.b.c.d = 4 #=> 4
+stash.a.b.c.d = false #=> TypeError
+stash.a.b.c = 1 #=> NoMethodError
+```
 
 ## Development
 

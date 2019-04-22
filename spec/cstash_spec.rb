@@ -1,10 +1,10 @@
-RSpec.describe Cstash do
+RSpec.describe CStash do
   it 'has a version number' do
-    expect(Cstash::VERSION).not_to be nil
+    expect(CStash::VERSION).not_to be nil
   end
 
   let(:stash) {
-    Cstash::Stash.new(
+    CStash::Stash.new(
       a: {
         b: {
           c: {

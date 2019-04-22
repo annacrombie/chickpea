@@ -4,7 +4,7 @@ require 'cstash/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'cstash'
-  spec.version       = Cstash::VERSION
+  spec.version       = CStash::VERSION
   spec.authors       = ['Stone Tickle']
   spec.email         = ['lattis@mochiro.moe']
 

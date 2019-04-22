@@ -1,4 +1,4 @@
-module Cstash
+module CStash
   class Stash
     class<<self
       def make_stash(hash)

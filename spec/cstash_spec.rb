@@ -24,8 +24,10 @@ RSpec.describe CStash do
 
   it 'allows you to set some attributes' do
     expect { stash.a.bb = 1 }.to raise_exception(TypeError)
-    expect { stash.a.bb = false }.not_to raise_exception
+    expect { stash.a.bb = true }.not_to raise_exception
+    expect(stash.a.bb).to be(true)
     expect { stash.a.b.c.d = 1.1 }.to raise_exception(TypeError)
     expect { stash.a.b.c.d = 3 }.not_to raise_exception
+    expect(stash.a.b.c.d).to eq(3)
   end
 end

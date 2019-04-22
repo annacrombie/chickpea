@@ -1,4 +1,4 @@
-module CStash
+module Chickpea
   class Stash
     class<<self
       def make_stash(hash)

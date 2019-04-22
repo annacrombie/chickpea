@@ -1,10 +1,10 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cstash/version'
+require 'chickpea/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'cstash'
-  spec.version       = CStash::VERSION
+  spec.name          = 'chickpea'
+  spec.version       = Chickpea::VERSION
   spec.authors       = ['Stone Tickle']
   spec.email         = ['lattis@mochiro.moe']
 

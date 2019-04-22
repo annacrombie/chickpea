@@ -1,10 +1,10 @@
-RSpec.describe CStash do
+RSpec.describe Chickpea do
   it 'has a version number' do
-    expect(CStash::VERSION).not_to be nil
+    expect(Chickpea::VERSION).not_to be nil
   end
 
   let(:stash) {
-    CStash::Stash.new(
+    Chickpea.new(
       a: {
         b: {
           c: {

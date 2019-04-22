@@ -10,7 +10,7 @@ features.
 + Type checking - when you set a node, its type (class) is checked against the
   old node and an exception is raised if there is a mismatch
 + Fast - there is no underlying hash or struct, so if you don't need to mutate
-  data often cstash is pretty fast
+  data often cstash is pretty fast (about 2.5 x slower than Hash)
 
 ## Installation
 

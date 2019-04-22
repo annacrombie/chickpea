@@ -42,6 +42,12 @@ module Chickpea
         klass.define_method(key) { obj }
       end
 
+      klass.define_method(:to_h) do
+        hash.map do |k, v|
+          [k, send(k).then { |r| v.is_a?(Hash) ? r.to_h : r }]
+        end.to_h
+      end
+
       klass.new
     end
 

@@ -30,4 +30,9 @@ RSpec.describe Chickpea do
     expect { stash.a.b.c.d = 3 }.not_to raise_exception
     expect(stash.a.b.c.d).to eq(3)
   end
+
+  it 'can be converted to a hash' do
+    expect(stash.a.b.c.to_h).to eq(d: 1)
+    expect(stash.a.b.to_h).to eq(c: { d: 1 })
+  end
 end
